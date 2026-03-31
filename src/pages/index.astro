@@ -1,7 +1,16 @@
 ---
+import BalloonLandingInitiator from "../components/BalloonLandingInitiator"
+import BalloonMetricsDisplay from "../components/BalloonMetricsDisplay"
+import BalloonTargetSetter from "../components/BalloonTargetSetter"
 import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout>
-    <h1 class="text-7xl font-sans">Satoshi Autonomous Altitude Management</h1>
+    <div class="p-4 flex flex-col gap-4">
+        <h1 class="text-6xl font-black">Autonomous Altitude Management For Hot-Air Balloons</h1>
+        <h1 class="text-xl">Embedded Systems Project By Alan J Bibins and Sukruta Nadkarni</h1>
+        <BalloonMetricsDisplay client:only="preact" />
+        <BalloonTargetSetter client:only="preact" />
+        <BalloonLandingInitiator client:only="preact"/>
+    </div>
 </Layout>

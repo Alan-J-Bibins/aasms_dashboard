@@ -12,8 +12,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^5.1.0",
     "@tailwindcss/vite": "^4.2.2",
+    "@tanstack/preact-query": "^5.95.2",
     "astro": "^6.1.1",
+    "preact": "^10.29.0",
     "tailwindcss": "^4.2.2"
   }
 }

@@ -6,6 +6,7 @@ import { type ReactNode } from "preact/compat";
 export default function BalloonMetricsDisplay() {
 
     const getData = async () => {
+        console.log("GETTING DATA");
         const res = await fetch('http://balloon.local/');
         return res.json();
     }
@@ -26,16 +27,16 @@ export default function BalloonMetricsDisplay() {
             {!isLoading && data && (
                 <div className="w-full grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                     <LabelBox label="Current Altitude (ASL)">
-                        <span className="text-2xl font-black"> {data.alt_m}m </span>
+                        <span className="text-2xl font-black"> {data.alt_baro}m </span>
                     </LabelBox>
                     <LabelBox label="Current Altitude (AGL)">
-                        <span className="text-2xl font-black"> {data.alt_agl}m </span>
+                        <span className="text-2xl font-black"> {data.alt_radar}m </span>
                     </LabelBox>
                     <LabelBox label="Target Altitude">
-                        <span className="text-2xl font-black"> {data.target_m === -1 ? "Not Defined" : `${data.target_m}m`} </span>
+                        <span className="text-2xl font-black"> {data.target_asl === -1 ? "Not Defined" : `${data.target_asl}m`} </span>
                     </LabelBox>
                     <LabelBox label="Burner Valve Degrees">
-                        <span className="text-2xl font-black"> {data.burner_deg}° </span>
+                        <span className="text-2xl font-black"> {data.servo_deg}° </span>
                     </LabelBox>
                     <LabelBox label="Current Pressure">
                         <span className="text-2xl font-black"> {data.pressure_hpa} hPa </span>

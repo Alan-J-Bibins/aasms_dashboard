@@ -1,10 +1,10 @@
 export type BalloonMetrics = {
     temp_c: number;
     pressure_hpa: number;
-    alt_m: number;
-    alt_agl: number;
-    target_m: number;
-    burner_deg: number;
-    status: "IDLE" | "LOCKED" | "LANDING" | "LANDED";
+    alt_baro: number;
+    alt_radar: number;
+    target_asl: number;
+    servo_deg: number;
+    status: "IDLE" | "LOCKED" | "LANDING" | "LANDED" | "OBSTACLE";
     is_landing: boolean;
 }
